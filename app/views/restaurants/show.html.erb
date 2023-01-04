@@ -7,4 +7,6 @@
   <%= link_to "Back to restaurants", restaurants_path %>
 
   <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+
+  <%= link_to "Rating this restaurant", new_restaurant_rating_path(@restaurant) %>
 </div>
