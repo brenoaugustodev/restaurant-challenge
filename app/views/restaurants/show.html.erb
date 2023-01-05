@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @restaurant %>
-
-<div>
-  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %>
-
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
-  <%= link_to "Rating this restaurant", new_restaurant_rating_path(@restaurant)  %>
+<div class="container">
+    <%= render @restaurant %>
+  
+    <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant), class:"btn btn-primary btn-lg btn-block" %>
+    <%= link_to "Back to restaurants", restaurants_path, class:"btn btn-primary btn-lg btn-block" %>  
+    <%= link_to 'Destroy this restaurant', restaurant_path(@restaurant), data:{turbo_method: :delete, turbo_confirm: 'Are you sure?'}, class: 'btn btn-danger btn-lg btn-block'%>
+    <%= link_to "Rating this restaurant", new_restaurant_rating_path(@restaurant), class:"btn btn-success btn-lg btn-block"   %>
 </div>
+
+
+

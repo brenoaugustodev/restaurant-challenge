@@ -1,15 +1,14 @@
-<h1>Ratings#new</h1>
-<p>Find me in app/views/ratings/new.html.erb</p>
+<div class="container">
+  <h1>New Vote</h1>
 
+  <%= simple_form_for @rating, url: restaurant_ratings_path, method: :post do |f| %>
 
-<%= simple_form_for @rating, url: restaurant_ratings_path, method: :post do |f| %>
+    <div class="form-inputs">
+      <%= f.input :user, label: 'Your name:' %>
+    </div>
 
-  <div class="form-inputs">
-    <%= f.input :user %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Vote" %>
-  </div>
-<% end %>
-
+    <div class="form-actions">
+      <%= f.button :submit, "Vote", class:"btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

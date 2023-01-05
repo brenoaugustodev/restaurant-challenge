@@ -6,8 +6,8 @@ class RatingsController < ApplicationController
   end
   
   def new
-    if ((Time.now.strftime("%H:%M") < "09:00") || (Time.now.strftime("%H:%M") > "11:50" ))
-      redirect_to restaurants_path, notice: "You cannot vote before 09:00 or after 11:50"
+    if ((Time.now.strftime("%H:%M") < "09:00") || (Time.now.strftime("%H:%M") > "18:50" ))
+      redirect_to restaurants_path, notice: " SORRY. YOU CAN VOTE ONLY BETWEEN 09:00 AM TO 11:50 AM"
     else
       @rating = Rating.new
       @restaurant = Restaurant.find(params[:restaurant_id])
@@ -19,7 +19,7 @@ class RatingsController < ApplicationController
     @rating = Rating.new(rating_params)
     @rating.restaurant_id = params[:restaurant_id]
       if @rating.save
-        redirect_to  restaurants_path, notice: "Rating was successfully created." 
+        redirect_to  root_path, notice: "Thank you! Your vote was counted" 
       else
       render :new, status: :unprocessable_entity 
       end
