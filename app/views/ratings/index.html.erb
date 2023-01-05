@@ -11,4 +11,4 @@
   <% end %>
 <%= link_to "Go to restaurants", restaurants_path, class:"btn btn-primary mt-3" %>
 </div>
-<%= @restaurants.sort_by {|restaurant| [-1*restaurant.ratings.count]}  %>
+<%# <%= @restaurants.sort_by {|restaurant| [-1*restaurant.ratings.count]}  %> 
