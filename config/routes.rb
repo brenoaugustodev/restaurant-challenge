@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root to: 'ratings#index'
 
   resources :restaurants do
     resources :ratings, only: [:new, :create]
