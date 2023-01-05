@@ -6,7 +6,7 @@ class RatingsController < ApplicationController
   end
   
   def new
-    if ((Time.now.strftime("%H:%M") < "09:00") || (Time.now.strftime("%H:%M") > "18:50" ))
+    if ((Time.now.strftime("%H:%M") < "09:00") || (Time.now.strftime("%H:%M") > "11:50" ))
       redirect_to restaurants_path, notice: " SORRY. YOU CAN VOTE ONLY BETWEEN 09:00 AM TO 11:50 AM"
     else
       @rating = Rating.new
