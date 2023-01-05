@@ -1,17 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container">
-  <div class="request_card_total">
-      <h1>Restaurants:</h1>
-    <div class="bg-primary bg-gradient text-white py-1 mb-3 rounded-3" style="width: 100px>
-      <% @restaurants.each do |restaurant| %>
+  <div >
+    <h1>Restaurants:</h1>
+    <% @restaurants.each do |restaurant| %>
+    <div class="card w-75 mt-3">
+      <%= render restaurant, class: "card-title" %>
+      <%= link_to "Show this restaurant", restaurant, class:"btn btn-primary" %>
+
+      </div>
+    <% end %>
     </div>
-        <%= render restaurant %>
-  </div>
-        <%= link_to "Show this restaurant", restaurant %>
-        <p>
-        </p>
-      <% end %>
-  <%= link_to "New restaurant", new_restaurant_path %>
+      
+    <div>
+    <%= link_to "New restaurant", new_restaurant_path, class:"btn btn-success mt-2" %>
+    <%= link_to "Ranking", root_path, class:"btn btn-success mt-2" %>
+    </div>
 </div>
 

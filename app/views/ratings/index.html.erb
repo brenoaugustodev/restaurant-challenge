@@ -1,11 +1,14 @@
-<h1>Ratings</h1>
+<div class="container">
+<h1>Ranking</h1>
 
   <% @restaurants.each do |restaurant| %>
-<div>
-    <%= restaurant.name %>
-    <%= restaurant.ratings.length %>
-    
-</div>
+  <div class="card w-75 mt-3">
+    <div>
+      <%= restaurant.name %>
+      | Votes: <%= restaurant.ratings.count %>
+    </div>  
+  </div>
   <% end %>
-
-<%= link_to "Back to restaurants", restaurants_path %>
+<%= link_to "Go to restaurants", restaurants_path, class:"btn btn-primary mt-3" %>
+</div>
+<%= @restaurants.sort_by {|restaurant| [-1*restaurant.ratings.count]}  %>
